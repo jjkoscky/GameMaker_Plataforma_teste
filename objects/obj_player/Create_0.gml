@@ -5,7 +5,7 @@ gravidade = .3;
 acelera_chao = .1;
 acelera_ar = .07;
 acelera = acelera_chao;
-deslisar = -2;
+deslisar = 2;
 
 
 //----velocidades

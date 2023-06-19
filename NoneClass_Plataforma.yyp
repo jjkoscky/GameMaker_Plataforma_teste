@@ -38,6 +38,8 @@
     "IDEVersion": "2023.2.1.75",
   },
   "resources": [
+    {"id":{"name":"spr_vel","path":"sprites/spr_vel/spr_vel.yy",},},
+    {"id":{"name":"obj_vel","path":"objects/obj_vel/obj_vel.yy",},},
     {"id":{"name":"obj_rastro_player","path":"objects/obj_rastro_player/obj_rastro_player.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

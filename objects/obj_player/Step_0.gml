@@ -99,16 +99,50 @@ switch(estado)
 		break;
 	
 	case state.movendo:
+	
+	//Abaixando
+	if (chao && down)
+	{
+		xscale = 1.3;
+		yscale = .5
+	}
 	//aplicando a movimentacao
 	veloc_h = lerp(veloc_h, avanco_h, acelera);
+	
+	//Fazendo poeira
+	if( abs(veloc_h) > max_veloc_h - .5 && chao )
+	{
+		//criando a poeira quando estiver correndo
+		var chance = random(100);
+		if (chance > 85)
+		{
+			for (var i =0; i < irandom_range(4, 10); i++ )
+			{
+				var xx = random_range(x - sprite_width/2, x + sprite_width/2);
+				instance_create_depth(xx, y, depth - 1000, obj_vel);
+			}
+		}
+	}
 	
 	//Gravidade && parede
 	if(!chao && (parede_dir or parede_esq or timer_pulo))
 	{
 		//não estou no chao mas estou na parede
-		if(veloc_v > 0)//estouna parede e estou caindo
+		if(veloc_v > 0)//estou na parede e estou caindo
 		{
 			veloc_v = lerp(veloc_v, deslisar, acelera);
+			//criando a poeira quando estiver caindo na parede
+			var chance = random(100);
+			if (chance > 90)
+			{
+				for (var i =0; i < irandom_range(4, 10); i++ )
+				{
+					var onde = parede_dir - parede_esq;
+					var xx = x + onde * sprite_width/2;
+					var yy = y + random_range(-sprite_height/4, 0);
+					instance_create_depth(xx, yy, depth - 1000, obj_vel);
+				}
+			}
 		}
 		else
 		{
@@ -123,6 +157,16 @@ switch(estado)
 			veloc_h = -max_veloc_h;
 			xscale = .5;
 			yscale = 1.5;
+			
+			//criando poeira quando pula da parede
+			for (var i =0; i < irandom_range(4, 10); i++ )
+			{
+				var onde = parede_dir - parede_esq;
+				var xx = x + sprite_width/2;
+				var yy = y + random_range(-sprite_height/4, 0);
+				instance_create_depth(xx, yy, depth - 1000, obj_vel);
+			}
+			
 		}
 		else if (ultima_parede && jump)
 		{
@@ -130,6 +174,16 @@ switch(estado)
 			veloc_h = max_veloc_h;
 			xscale = .5;
 			yscale = 1.5;
+			
+			//criando poeira quando pula da parede
+			for (var i =0; i < irandom_range(4, 10); i++ )
+			{
+				var onde = parede_dir - parede_esq;
+				var xx = x - sprite_width/2;
+				var yy = y + random_range(-sprite_height/4, 0);
+				instance_create_depth(xx, yy, depth - 1000, obj_vel);
+			}
+			
 		}
 	}
 	else if (!chao)
@@ -145,6 +199,14 @@ switch(estado)
 		xscale = .5;
 		yscale = 1.5;
 		
+		//criando a poeira
+		for (var i =0; i < irandom_range(4, 10); i++ )
+		{
+			var xx = random_range(x - sprite_width, x + sprite_width);
+			instance_create_depth(xx, y, depth - 1000, obj_vel);
+		}
+		
+	}
 		//buffer pulo
 		if(jump || jump_2) timer_queda = limite_buffer;
 		if(timer_queda > 0 ) buffer_pulo = true;
@@ -161,12 +223,19 @@ switch(estado)
 				
 				timer_pulo = 0;
 				timer_queda = 0;
+				
+				//criando a poeira
+				for (var i =0; i < irandom_range(4, 10); i++ )
+				{
+					var xx = random_range(x - sprite_width, x + sprite_width);
+					instance_create_depth(xx, y, depth - 1000, obj_vel);
+				}
+				
 			}
 			
 			timer_queda--;
 		}
 	
-	}
 	//controlando altura do pulo
 	if ((jump_s || jump_2s) && veloc_v < 0) veloc_v *= .7;
 	

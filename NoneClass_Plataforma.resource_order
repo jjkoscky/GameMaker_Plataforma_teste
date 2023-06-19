@@ -20,6 +20,8 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"spr_vel","order":1,"path":"sprites/spr_vel/spr_vel.yy",},
+    {"name":"obj_vel","order":2,"path":"objects/obj_vel/obj_vel.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
   ],
 }

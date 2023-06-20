@@ -46,7 +46,7 @@ saturacao = 225;
 
 enum state 
 {
-	parado, movendo, dash
+	parado, movendo, dash, morte
 }
 
 estado = state.parado;

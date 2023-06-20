@@ -302,6 +302,12 @@ switch(estado)
 		veloc_v = (max_veloc_v * sign(veloc_v) * .5);
 	}
 	break;
+	
+	case state.morte:
+	
+		room_restart();
+	
+	break;
 }
 
 show_debug_message(estado);

@@ -5,6 +5,7 @@
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Objects","order":9,"path":"folders/Objects.yy",},
+    {"name":"Obstaculos","order":3,"path":"folders/Objects/Obstaculos.yy",},
     {"name":"Outros","order":2,"path":"folders/Objects/Outros.yy",},
     {"name":"Player","order":1,"path":"folders/Objects/Player.yy",},
     {"name":"Particle Systems","order":15,"path":"folders/Particle Systems.yy",},
@@ -15,6 +16,7 @@
     {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
+    {"name":"Obstaculos","order":3,"path":"folders/Sprites/Obstaculos.yy",},
     {"name":"Outros","order":1,"path":"folders/Sprites/Outros.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
@@ -22,6 +24,11 @@
   "ResourceOrderSettings": [
     {"name":"spr_vel","order":1,"path":"sprites/spr_vel/spr_vel.yy",},
     {"name":"obj_vel","order":2,"path":"objects/obj_vel/obj_vel.yy",},
+    {"name":"obj_bonus","order":2,"path":"objects/obj_bonus/obj_bonus.yy",},
+    {"name":"obj_part","order":3,"path":"objects/obj_part/obj_part.yy",},
+    {"name":"obj_morte","order":1,"path":"objects/obj_morte/obj_morte.yy",},
+    {"name":"spr_bonus","order":2,"path":"sprites/spr_bonus/spr_bonus.yy",},
+    {"name":"spr_morte","order":1,"path":"sprites/spr_morte/spr_morte.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
   ],
 }
